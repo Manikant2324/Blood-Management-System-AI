@@ -1,0 +1,222 @@
+{
+  "donor_response": {
+    "model_type": "logistic",
+    "roc_auc": 0.6987,
+    "accuracy": 0.636,
+    "precision_at_k": {
+      "Precision@3": 0.6667,
+      "Precision@5": 0.6613,
+      "Precision@10": 0.5987
+    },
+    "recall_at_k": {
+      "Recall@3": 0.1867,
+      "Recall@5": 0.3074,
+      "Recall@10": 0.5581
+    },
+    "feature_importances": {
+      "distance_km": -0.7057,
+      "days_since_last_donation": 0.3007,
+      "past_response_rate": 0.3858,
+      "time_of_day_hour": 0.2002
+    }
+  },
+  "demand_forecasting": {
+    "overall_mae": 3.52,
+    "overall_rmse": 5.42,
+    "blood_group_metrics": {
+      "A+": {
+        "mae": 4.359,
+        "rmse": 5.646
+      },
+      "A-": {
+        "mae": 1.933,
+        "rmse": 2.639
+      },
+      "AB+": {
+        "mae": 2.262,
+        "rmse": 2.814
+      },
+      "AB-": {
+        "mae": 1.879,
+        "rmse": 2.656
+      },
+      "B+": {
+        "mae": 6.402,
+        "rmse": 8.399
+      },
+      "B-": {
+        "mae": 1.819,
+        "rmse": 2.524
+      },
+      "O+": {
+        "mae": 7.541,
+        "rmse": 9.866
+      },
+      "O-": {
+        "mae": 1.962,
+        "rmse": 2.641
+      }
+    },
+    "city_metrics": {
+      "Ahmedabad": {
+        "mae": 2.189,
+        "rmse": 3.386
+      },
+      "Bengaluru": {
+        "mae": 3.835,
+        "rmse": 5.474
+      },
+      "Chennai": {
+        "mae": 2.369,
+        "rmse": 3.641
+      },
+      "Delhi": {
+        "mae": 5.233,
+        "rmse": 7.295
+      },
+      "Hyderabad": {
+        "mae": 2.762,
+        "rmse": 4.113
+      },
+      "Kolkata": {
+        "mae": 3.323,
+        "rmse": 5.165
+      },
+      "Mumbai": {
+        "mae": 6.279,
+        "rmse": 8.495
+      },
+      "Pune": {
+        "mae": 2.166,
+        "rmse": 3.372
+      }
+    }
+  },
+  "noshow_prediction": {
+    "recall": 0.6629,
+    "f1_score": 0.5553,
+    "precision": 0.4777,
+    "accuracy": 0.6976,
+    "confusion_matrix": [
+      [
+        318,
+        129
+      ],
+      [
+        60,
+        118
+      ]
+    ],
+    "feature_importance": {
+      "total_past_donations": 0.0946,
+      "past_noshow_rate": 0.1118,
+      "distance_km": 0.3414,
+      "lead_time_days": 0.1119,
+      "reminder_sent": 0.0495,
+      "slot_hour": 0.0255,
+      "urgency_Emergency": 0.1141,
+      "urgency_Routine": 0.1242,
+      "urgency_Urgent": 0.027
+    }
+  },
+  "fake_request_and_urgency": {
+    "fake_detection": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "accuracy": 1.0
+    },
+    "urgency_classification": {
+      "precision_macro": 0.9192,
+      "recall_macro": 0.9338,
+      "f1_macro": 0.9236
+    }
+  },
+  "donor_retention": {
+    "auc": 0.8236,
+    "accuracy": 0.9568,
+    "precision": 0.4167,
+    "recall": 0.2,
+    "feature_importances": {
+      "donation_frequency": 0.2006,
+      "recency_days": 0.4222,
+      "total_donations": 0.0094,
+      "response_rate": 0.1121,
+      "tenure_months": 0.0342,
+      "app_logins_per_month": 0.0684,
+      "distance_to_center_km": 0.1531
+    }
+  },
+  "donor_segmentation": {
+    "n_clusters": 4,
+    "silhouette_score": 0.4373,
+    "davies_bouldin_index": 0.9425,
+    "inertia": 1849.04,
+    "cluster_profiles": {
+      "0": {
+        "clusterId": 0,
+        "name": "Dedicated Champions",
+        "badge": "Champion",
+        "description": "Consistent, frequent donors with high emergency responsiveness and long tenure. The backbone of blood bank reserves.",
+        "strategy": "VIP recognition, blood bank ambassador invites, early notification for critical shortages.",
+        "donorCount": 279,
+        "percentage": 19.4,
+        "averages": {
+          "age": 51.0,
+          "distanceKm": 18.1,
+          "annualDonationFrequency": 0.57,
+          "emergencyResponsiveness": 0.27,
+          "tenureYears": 5.1
+        }
+      },
+      "1": {
+        "clusterId": 1,
+        "name": "Young First-Timers & Potentials",
+        "badge": "First-Timer",
+        "description": "Younger cohort (ages 18-25) in early donation stages. Highly active on mobile, strong potential for long-term loyalty.",
+        "strategy": "Gamification, digital social badges, university campus drives, educational myth-busting content.",
+        "donorCount": 447,
+        "percentage": 31.0,
+        "averages": {
+          "age": 22.0,
+          "distanceKm": 7.6,
+          "annualDonationFrequency": 1.2,
+          "emergencyResponsiveness": 0.55,
+          "tenureYears": 1.0
+        }
+      },
+      "2": {
+        "clusterId": 2,
+        "name": "Emergency Rapid Responders",
+        "badge": "Rapid Responder",
+        "description": "Donors who donate occasionally for routine drives but demonstrate exceptional 90%+ response rates during urgent SOS alerts.",
+        "strategy": "Reserve priority alerts for genuine Code-Red emergencies to prevent donor alert fatigue.",
+        "donorCount": 347,
+        "percentage": 24.1,
+        "averages": {
+          "age": 35.3,
+          "distanceKm": 4.5,
+          "annualDonationFrequency": 3.8,
+          "emergencyResponsiveness": 0.87,
+          "tenureYears": 4.7
+        }
+      },
+      "3": {
+        "clusterId": 3,
+        "name": "Lapsed / Distant Donors",
+        "badge": "At-Risk",
+        "description": "Donors residing farther from donation centers or showing declining frequency. At risk of permanent churn.",
+        "strategy": "Mobile van donation camps near their neighborhoods, flexible weekend appointment slots, win-back surveys.",
+        "donorCount": 367,
+        "percentage": 25.5,
+        "averages": {
+          "age": 41.4,
+          "distanceKm": 6.3,
+          "annualDonationFrequency": 1.84,
+          "emergencyResponsiveness": 0.92,
+          "tenureYears": 3.5
+        }
+      }
+    }
+  }
+}
